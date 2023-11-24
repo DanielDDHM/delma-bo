@@ -1,0 +1,23 @@
+/**
+ *
+ * {{ properCase name }}
+ *
+ */
+
+import React from 'react';
+{{#if wantStyles}}
+import './styles.scss';
+{{/if}}
+{{#if wantMessages}}
+import Strings from 'utils/strings';
+{{/if}}
+
+export class {{ properCase name }} extends {{{ type }}}<any, any> {
+  render() {
+    return (
+      <div>{{ properCase name }}</div>
+    );
+  }
+}
+
+export default {{ properCase name }};

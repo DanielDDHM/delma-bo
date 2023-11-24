@@ -1,0 +1,527 @@
+@import "fonts";
+@import "icomoon";
+@import "variables";
+
+// @import '~antd/lib/style/themes/default.less';
+// @import '~antd/dist/antd.less'; // Import Ant Design styles by less entry
+
+html * {
+    font-family: Nunito;
+    outline: none !important;
+    -webkit-font-smoothing: antialiased;
+}
+
+.App {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: $appBackgroundColor;
+    overflow: hidden;
+}
+
+// Overrides
+
+input,
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    font-size: $m !important;
+}
+
+textarea.--textarea-no-resize {
+    resize: none;
+}
+
+.ant-form-item-label {
+    label {
+        font-weight: 700;
+    }
+}
+
+.ant-tabs-tab-active {
+    .ant-tabs-tab-btn {
+        font-weight: 700 !important;
+    }
+}
+
+.tox-notification,
+.tox-statusbar__branding {
+    display: none !important;
+}
+
+.tox-tinymce {
+    border-radius: $sidebarMenuBorderRadius !important;
+}
+
+// End of Overrides
+
+.WrapperInput {
+    padding: 20px;
+}
+
+.m10r {
+    margin-right: 10px;
+}
+
+.m10l {
+    margin-left: 10px;
+}
+
+.m10b {
+    margin-bottom: 10px;
+}
+
+.InputLabel {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    height: 30px;
+    color: rgba(0, 0, 0, 0.85);
+    font-size: $ml;
+    font-weight: 700;
+    line-height: 1;
+    cursor: default;
+
+    &.--label-required::after {
+        content: "";
+        display: inline-block;
+        margin-left: 4px;
+        color: #ff4d4f;
+        font-size: $ml;
+        font-family: SimSun, sans-serif;
+        line-height: 1;
+        content: "*";
+    }
+}
+
+.SingleLabel {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    height: 40px;
+    color: rgba(0, 0, 0, 0.85);
+    font-size: $ml;
+    font-weight: 700;
+    cursor: default;
+
+    &.__required::before {
+        display: inline-block;
+        margin-right: 4px;
+        color: #ff4d4f;
+        font-size: $ml;
+        font-family: SimSun, sans-serif;
+        line-height: 1;
+        content: "*";
+    }
+}
+
+.SEOLink {
+    color: $primaryColor;
+    font-weight: 700;
+}
+
+.GenericTitleContainer {
+    display: flex;
+    align-items: center;
+    color: $primaryColor;
+    margin: 25px 0 10px;
+
+    &.--title-multi-container {
+        justify-content: space-between;
+
+        .GenericTitle {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    em {
+        font-size: $xl;
+        margin-right: 10px;
+    }
+
+    h1 {
+        margin: 2px 0 0;
+        font-size: $xl;
+        font-weight: 600;
+        line-height: 1;
+    }
+}
+
+.GalleryImageUpload {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 250px;
+    border: 2px dashed #d1d1d1;
+    background-color: #f9f9f9;
+    transition: 200ms;
+    margin-bottom: 10px;
+    cursor: pointer;
+
+    &:hover {
+        border-color: #40a9ff;
+    }
+
+    em {
+        color: #40a9ff;
+        font-weight: 600;
+        font-size: 34px;
+        margin-bottom: 20px;
+    }
+
+    p.upload-text {
+        margin: 0 0 4px;
+        color: #000000d9;
+        font-size: $l;
+    }
+
+    p.upload-hint {
+        color: #00000073;
+        margin: 0;
+        font-size: $ml;
+    }
+}
+
+.GalleryImages {
+    grid-template-rows: 1fr;
+    display: grid;
+    grid-gap: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+
+    .GalleryImageContainer {
+        height: 150px;
+        -webkit-box-flex: 1;
+        border-radius: 4px;
+        -ms-flex: 1;
+        flex: 1;
+        isolation: isolate;
+        padding: 5px;
+        position: relative;
+        -webkit-transition: background-color 0.3s ease;
+        transition: background-color 0.3s ease;
+        width: 100%;
+        border: 1px solid #d9d9d9;
+        border-radius: 4px;
+        background-color: #eee;
+
+        &:hover {
+            .GalleryImageOverlay {
+                opacity: 1;
+            }
+        }
+
+        .upload-new {
+            position: absolute;
+            left: 6px;
+            bottom: 6px;
+            background-color: $primaryColor;
+            color: #ffffff;
+            border-radius: 4px;
+            padding: 2px 5px;
+            font-size: 12px;
+        }
+
+        .GalleryImageOverlay {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #00000099;
+            transition: 300ms;
+            opacity: 0;
+
+            em {
+                color: #ffffffd9;
+                font-size: $xl;
+                cursor: pointer;
+                transition: 200ms;
+
+                &:hover {
+                    color: #ffffff;
+                }
+            }
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.TabIconContainer {
+    display: flex;
+    align-items: center;
+
+    p {
+        margin: 0;
+        line-height: 1px;
+    }
+
+    em {
+        margin-right: 10px;
+    }
+}
+
+.SearchMapResults {
+    display: flex;
+    flex: 1;
+    border: 1px solid #d1d1d1;
+    // -webkit-box-shadow: 0px 5px 38px -4px rgba(0, 0, 0, 0.75);
+    // -moz-box-shadow: 0px 5px 38px -4px rgba(0, 0, 0, 0.75);
+    // box-shadow: 0px 5px 38px -4px rgba(0, 0, 0, 0.75);
+}
+
+.SidebarTitleContainer {
+    display: flex;
+    align-items: center;
+
+    p {
+        margin: 0;
+        color: #fff;
+        font-weight: 700;
+    }
+
+    em {
+        font-size: $l;
+        color: #fff;
+        font-weight: bold;
+        margin-right: 10px;
+    }
+}
+
+.SidebarFooterContainer {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    .SidebarFooterButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffffff;
+        height: 35px;
+        width: 50%;
+        cursor: pointer;
+        transition: 300ms;
+
+        &.--button-confirm {
+            border: 1px solid $primaryColor;
+
+            &:hover {
+                background-color: $primaryColor;
+                color: #ffffff;
+            }
+        }
+
+        &.--button-cancel {
+            border: none;
+            background-color: #eee;
+
+            &:hover {
+                background-color: #d1d1d1;
+            }
+        }
+    }
+}
+
+.GenericSwitch {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: grey;
+    border-radius: 4px;
+    padding: 0 10px;
+    height: 40px;
+
+    span {
+        display: block;
+        font-size: 0.8em;
+        color: white;
+        margin-right: 10px;
+    }
+
+    &.__active {
+        background-color: $primaryColor;
+    }
+
+    .ant-switch-checked {
+        background-color: darken($primaryColor, 10%) !important;
+    }
+}
+
+.General_ColorFul_Switch {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    background-color: $sidebarSecondaryColor;
+    border-radius: 4px;
+    padding: 0 10px;
+    margin-top: 20px;
+
+    &.__active {
+        background-color: $primaryColor;
+    }
+
+    .Switch {
+        &.__active {
+            background: $lightPrimary !important;
+        }
+    }
+
+    span {
+        color: white;
+    }
+}
+
+.TableSelectFilter {
+    .ant-select-selector {
+        // height: 37px !important;
+    }
+}
+
+.modalContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+
+    .modalTitle {
+        font-size: 18px;
+        font-weight: bold;
+        color: $primaryColor;
+        margin: 15px;
+    }
+}
+
+.NumberFormatInput {
+    height: 40px;
+    border: 1px solid #d9d9d9;
+    background-color: #fff;
+    border-radius: 4px;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    padding: 0 11px;
+
+    &:hover {
+        border-color: #2b556b;
+    }
+
+    &:focus {
+        border-color: #2b556b;
+        box-shadow: 0 0 0 2px rgb(23 68 95 / 20%);
+    }
+}
+
+.react-tel-input.ant-input {
+    .input-phone.form-control {
+        border-radius: 4px;
+    }
+
+    .flag-dropdown,
+    .selected-flag {
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+    }
+}
+
+.GenericImageUpload {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    min-height: 140px;
+    overflow: hidden;
+    transition: 0.2s;
+    z-index: 1;
+
+    em {
+        font-size: $xl;
+    }
+
+    span {
+        display: block;
+        margin-top: 20px;
+        max-width: 250px;
+        text-align: center;
+        font-weight: 600;
+    }
+
+    .GenericImageUploadOverlay {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: #eee;
+        opacity: 0;
+        transition: 200ms ease-in-out;
+        border-radius: 4px;
+
+        &.--visible {
+            opacity: 1;
+        }
+
+        em {
+            font-size: 36px;
+        }
+    }
+}
+
+.GenericButton {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    span {
+        line-height: 1;
+    }
+}
+
+.GenericLabel {
+	display: flex;
+	align-items: center;
+	height: 30px;
+	color: hsla(0, 0%, 0%, 0.85);
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 1;
+	cursor: default;
+
+	&::after {
+		display: inline-block;
+		margin-left: 4px;
+		color: hsl(359, 100%, 65%);
+		font-size: 14px;
+		font-family: SimSun, sans-serif;
+		line-height: 1;
+		content: "*";
+	}
+}
+
+.DrawerLanguageWrapper {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.MultiTitle {
+	display: flex;
+	justify-content: flex-end;
+}

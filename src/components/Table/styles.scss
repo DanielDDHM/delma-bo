@@ -1,0 +1,443 @@
+@import "styles/variables";
+
+// Classname do Container da tabela
+.TableComponent {
+    // padding: 1rem;
+    // These styles are suggested for the table fill all available space in its containing element
+    display: block;
+    // These styles are required for a horizontally scrollable table overflow
+    // overflow: auto;
+    background-color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    // box-shadow: 0px 2px 4px lightgray;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(63, 63, 68, 0.1);
+    // border-radius: 4px;
+
+    padding: 15px 20px;
+    font-family: Cabin;
+    // @media screen and (max-width: 500px){
+    // 	width:500px;
+    // }
+
+    .Table {
+        border-spacing: 0;
+        // border: 1px solid black;
+        user-select: none;
+        height: 100%;
+        min-height: 600px;
+
+        .TableMainHeader {
+            border-bottom: 0.5px solid #f0f0f0;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            height: 65px;
+
+            .MainHeaderIcon {
+                font-size: 22px;
+                margin-right: 15px;
+                color: $primaryColor;
+
+				&.--smaller {
+					font-size: 20px;
+					margin-right: 10px;
+				}
+            }
+
+            .MainHeaderTitle {
+                font-size: 1.5em;
+                display: block;
+                font-weight: bold;
+                margin-right: auto;
+                color: $primaryColor;
+
+				&.--smaller {
+					font-size: 16px;
+				}
+            }
+
+            .MainHeaderSearch {
+                width: 220px;
+                margin-left: 10px;
+                height: 40px;
+            }
+
+            .MainHeaderAddButton {
+                display: flex;
+                align-items: center;
+                margin-left: 10px;
+                span {
+                    margin-left: 10px;
+                }
+            }
+
+            .MainHeaderOption {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 60px;
+                position: relative;
+                cursor: pointer;
+                color: black;
+                transition: 0.2s;
+
+                &:hover {
+                    color: $primaryColor;
+                }
+
+                .icon {
+                    font-size: 20px;
+                }
+                span {
+                    position: absolute;
+                    font-size: 0.6em;
+                    font-weight: bold;
+                    margin-top: 5px;
+                    text-transform: uppercase;
+                    max-width: 50px;
+                    bottom: 0px;
+                }
+            }
+        }
+
+        .TableHeader .TableFooter {
+            overflow-y: auto;
+            overflow-x: hidden;
+            height: 50px;
+            border-bottom: 1px solid #d2d2d2;
+            align-items: center !important;
+
+            font-weight: bold;
+            color: black;
+            font-size: $ml;
+        }
+
+        .TableHeader {
+            .TableHeaderTitle {
+                display: flex;
+                flex: 1;
+                font-weight: bold;
+            }
+
+            .__arrow {
+                transition: 0.2s;
+                margin-left: auto;
+
+                &.disabled {
+                    color: #b2b2b2;
+                }
+
+                &.desc {
+                    transform: rotate(180deg);
+                }
+            }
+
+            .resizer {
+                display: flex;
+                margin-left: 10px;
+                height: 100%;
+                align-items: center;
+                justify-content: center;
+                flex-direction: row;
+
+                .line {
+                    transition: 0.2s;
+                    width: 1px;
+                    height: 100%;
+                    background-color: #d5d5d5;
+                }
+
+                .caret {
+                    transition: 0.2s;
+                    color: #d5d5d5;
+
+                    &.__left {
+                        margin-left: 0px;
+                        margin-right: 2px;
+                        transform: rotate(90deg);
+                    }
+
+                    &.__right {
+                        transform: rotate(-90deg);
+                    }
+                }
+
+                &.isResizing {
+                    .line {
+                        background-color: black;
+                    }
+                    .caret {
+                        color: black;
+                    }
+                }
+            }
+
+            &:last-child {
+                .resizer {
+                    display: none;
+                }
+            }
+        }
+
+        .TableBody {
+            height: 500px;
+            font-size: 13px;
+
+            &.TableBodyEmpty {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .TableRow {
+                height: 49px;
+                user-select: text;
+            }
+        }
+
+        .TablePagination {
+            margin-top: 30px;
+
+            .ant-pagination-options {
+                float: right;
+            }
+        }
+
+        .TableRow {
+            transition: 0.2s;
+            align-items: center;
+            border-bottom: 1px solid #e3e3e3;
+            min-width: 100% !important;
+            width: fit-content;
+
+            &:hover {
+                background-color: #fafafa;
+            }
+
+            &.__clickable {
+                cursor: pointer;
+            }
+
+            &.__expanded {
+                background-color: #fafafa;
+            }
+
+            :last-child {
+                .TableData {
+                    border-bottom: 0;
+                }
+            }
+        }
+
+        .TableHeader,
+        .TableData {
+            margin: 0;
+            padding: 0.5rem;
+            // border-bottom: 1px solid black;
+
+            /* In this example we use an absolutely position resizer,
+			so this is required. */
+            position: relative;
+            // overflow: hidden;
+            // background-color: white;
+            white-space: nowrap;
+
+            &:last-child {
+                border-right: 0;
+            }
+
+            &.__image {
+                padding: 0 0.5rem;
+            }
+
+            .hasImage {
+                width: 38px;
+                height: 28px;
+                box-shadow: 1px 2px 6px 0px #c7c7c7;
+                border: 1px solid rgb(240, 240, 240);
+                border-radius: 2px;
+                background-position: center center;
+                background-size: cover;
+                cursor: pointer;
+            }
+
+            .expand {
+                display: flex;
+                transition: 0.2s;
+                transform: rotate(-90deg);
+                &.__expanded {
+                    transform: rotate(90deg);
+                }
+            }
+
+            .ActionOption {
+                height: 22px;
+                width: 22px;
+                min-width: 22px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-left: 5px;
+                color: black;
+                cursor: pointer;
+                font-size: 14px;
+
+                em {
+                    transition: 0.2s;
+                }
+
+                &:hover {
+                    em {
+                        color: $primaryColor;
+                        display: flex;
+                        transform: scale(1.2);
+                    }
+                }
+            }
+
+            .ActionSwitch {
+                margin-left: 5px;
+            }
+        }
+
+        .TableFooter {
+            margin-top: 15px;
+            padding: 0 8px;
+            background-color: white;
+            &:last-child {
+                padding-right: 0px;
+            }
+            > :first-child {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.mouseOverImage {
+    animation: showImage 0.2s;
+    z-index: 999 !important;
+    position: fixed !important;
+    // left: 200px;
+    // top: 200px;
+    width: 200px;
+    height: 200px;
+    box-shadow: 2px 1px 9px #c7c7c7;
+    border-radius: 8px;
+    background-position: center center;
+    background-size: contain;
+}
+
+.Modal {
+    background: $sidebarSecondaryColor;
+    position: relative;
+    padding: 20px 40px;
+    height: 100%;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+
+    .closeModal {
+        cursor: pointer;
+        transition: 0.2s;
+        display: block;
+        font-size: 1.2em;
+        color: $textColor;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        &:hover {
+            color: #000;
+        }
+    }
+}
+
+.MainHeaderOptionTooltip {
+    // top: 70px !important;
+}
+
+.__simpleTable {
+    box-shadow: unset;
+
+    .Table {
+        height: unset !important;
+        min-height: unset !important;
+    }
+
+    .TableBody {
+        height: unset !important;
+    }
+
+    .TableData {
+        span {
+            white-space: nowrap;
+            max-width: 100%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+    }
+}
+
+.TableStickyHeader {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    border-bottom: 1px solid #e3e3e3;
+    z-index: 1;
+}
+
+.TableTag {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    color: #fff;
+    border-radius: 20px;
+    width: unset;
+    min-width: 80px;
+    position: relative;
+
+    em {
+        line-height: 0;
+        margin-right: 5px;
+    }
+
+    &.--tag-success {
+        background: #26a815;
+    }
+
+    &.--tag-warning {
+        background: rgb(255, 108, 23);
+    }
+
+    &.--tag-error {
+        background: #c31414;
+    }
+
+    &.--tag-clickable {
+        cursor: pointer;
+    }
+}
+
+.TableSwitch {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0 10px;
+
+	.TableSwitchLabel {
+		color: #333;
+		font-weight: 700;
+		margin-bottom: 1px;
+		white-space: nowrap;
+		font-size: 12px;
+	}
+}

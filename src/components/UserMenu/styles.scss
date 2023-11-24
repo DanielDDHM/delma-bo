@@ -1,0 +1,72 @@
+@import "styles/variables";
+
+.isUserMenu {
+    height: 30px !important;
+}
+
+.AdjustUserMenu:not(.active) {
+    margin-bottom: 0 !important;
+}
+
+.SidebarUserLogo {
+    position: relative;
+    z-index: 2;
+    width: 30px;
+    min-width: 30px;
+    height: 30px;
+    min-height: 30px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    // img {
+    //     position: relative;
+    //     z-index: 2;
+    //     width: 30px;
+    //     min-width: 30px;
+    //     height: 30px;
+    //     min-height: 30px;
+    //     border-radius: 50%;
+    //     // border: 2px solid #aaa;
+    // }
+}
+
+.SidebarMenuOptions {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10px;
+    transition: 0.2s;
+    user-select: none;
+
+    &.__forceWidth {
+        width: 200px;
+    }
+
+    &.__mobile {
+        flex-direction: column;
+    }
+
+    .SidebarMenuOption {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        font-size: $xl;
+        border-radius: $sidebarMenuBorderRadius;
+        cursor: pointer;
+        transition: 0.2s;
+
+        span {
+            line-height: 12px;
+        }
+
+        &:hover {
+            background-color: #00000050;
+        }
+    }
+}
+
+.SidebarNavName {
+    &.__normal {
+        text-transform: none;
+    }
+}

@@ -1,0 +1,147 @@
+@import "styles/variables";
+
+.ant-drawer-header {
+    background-color: $primaryColor !important;
+    border-radius: 0 !important;
+    color: "white" !important;
+    height: "65px" !important;
+}
+
+.ant-drawer-close {
+    margin-top: 3px !important;
+    color: white !important;
+}
+
+.ant-drawer-title {
+    margin-top: 5px !important;
+    color: white !important;
+}
+
+.__doubleColumn > .ant-drawer-content-wrapper {
+    width: 500px !important;
+
+    @media screen and (max-width: 580px) {
+        width: 85% !important;
+    }
+}
+
+.__singleColumn > .ant-drawer-content-wrapper {
+    width: 400px !important;
+
+    @media screen and (max-width: 480px) {
+        width: 85% !important;
+    }
+}
+
+.submitButton,
+.cancelButton {
+    min-width: 45%;
+    float: right;
+    margin: 15px;
+}
+
+.submitButton {
+    background: $primaryColor !important;
+    color: white !important;
+    border: $primaryColor !important;
+
+    &:hover {
+        background: $secondaryColor !important;
+        color: $primaryColor !important;
+        border: $secondaryColor !important;
+    }
+}
+
+.cancelButton {
+    &:hover {
+        border-color: $primaryColor !important;
+        color: $primaryColor !important;
+    }
+}
+
+.footer {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.inputLabel {
+    margin-left: 5px;
+    margin-right: 2px;
+    margin-bottom: 10px !important;
+    font-size: 15px !important;
+    font-weight: bold;
+    color: $primaryColor;
+}
+
+.ant-switch-checked {
+    background-color: #222d32 !important;
+}
+
+.ant-select-multiple > .ant-select-selector > .ant-select-selection-item {
+    background: $lightSecondary !important;
+}
+
+.ant-select-item-option-selected {
+    background-color: $lightSecondary !important;
+}
+
+.ant-picker-cell-in-view.ant-picker-cell-selected .ant-picker-cell-inner,
+.ant-picker-cell-in-view.ant-picker-cell-range-start .ant-picker-cell-inner,
+.ant-picker-cell-in-view.ant-picker-cell-range-end .ant-picker-cell-inner,
+.ant-picker-date-panel
+    .ant-picker-cell-in-view.ant-picker-cell-in-range.ant-picker-cell-range-hover-start
+    .ant-picker-cell-inner::after {
+    background: $secondaryColor !important;
+}
+
+.ant-picker-date-panel
+    .ant-picker-cell-in-view.ant-picker-cell-in-range.ant-picker-cell-range-hover-end
+    .ant-picker-cell-inner::after {
+    background: $secondaryColor !important;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.ant-picker-date-panel
+    .ant-picker-cell-in-view.ant-picker-cell-in-range.ant-picker-cell-range-hover-start
+    .ant-picker-cell-inner::after {
+    background: $secondaryColor !important;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.ant-picker-date-panel
+    .ant-picker-cell-in-view.ant-picker-cell-in-range.ant-picker-cell-range-hover-start
+    .ant-picker-cell-inner,
+.ant-picker-date-panel
+    .ant-picker-cell-in-view.ant-picker-cell-in-range.ant-picker-cell-range-hover-end
+    .ant-picker-cell-inner {
+    color: white !important;
+}
+
+.ant-picker-cell-in-view.ant-picker-cell-range-start:not(.ant-picker-cell-range-start-single)::before,
+.ant-picker-cell-in-view.ant-picker-cell-range-end:not(.ant-picker-cell-range-end-single)::before,
+.ant-picker-cell-in-view.ant-picker-cell-in-range::before {
+    background: $lightSecondary !important;
+}
+
+.ant-picker-cell-in-view.ant-picker-cell-in-range.ant-picker-cell-range-hover::before,
+.ant-picker-cell-in-view.ant-picker-cell-range-start.ant-picker-cell-range-hover::before,
+.ant-picker-cell-in-view.ant-picker-cell-range-end.ant-picker-cell-range-hover::before,
+.ant-picker-cell-in-view.ant-picker-cell-range-start:not(.ant-picker-cell-range-start-single).ant-picker-cell-range-hover-start::before,
+.ant-picker-cell-in-view.ant-picker-cell-range-end:not(.ant-picker-cell-range-end-single).ant-picker-cell-range-hover-end::before,
+.ant-picker-panel
+    > :not(.ant-picker-date-panel)
+    .ant-picker-cell-in-view.ant-picker-cell-in-range.ant-picker-cell-range-hover-start::before,
+.ant-picker-panel
+    > :not(.ant-picker-date-panel)
+    .ant-picker-cell-in-view.ant-picker-cell-in-range.ant-picker-cell-range-hover-end::before {
+    background: $lightPrimary !important;
+}
+
+.reduceMarginBottom {
+    .ant-form-item {
+        margin-bottom: 12px;
+    }
+}

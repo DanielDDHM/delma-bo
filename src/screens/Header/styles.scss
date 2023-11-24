@@ -1,0 +1,126 @@
+@import "styles/variables";
+
+.HeaderContainer {
+    z-index: 10;
+    background: #ffffff;
+    box-shadow: 2px 3px 8px #dedcde;
+    border-radius: $containerBorderRadius;
+    padding: 0px 25px;
+}
+
+.Header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 62px;
+    min-height: 62px;
+    position: relative;
+}
+
+.HeaderUserMenu {
+    display: flex;
+    align-items: center;
+    height: 40px;
+
+    &:hover {
+        color: $primaryColor;
+        background-color: transparent !important;
+    }
+}
+
+.HeaderUserMenuIcon {
+    font-size: $l;
+    margin-right: 10px;
+}
+
+.HeaderUserOptions {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    min-width: 150px;
+    max-width: 250px;
+    padding: 0 10px;
+    border-radius: $buttonBorderRadius;
+    background-color: whitesmoke;
+    box-shadow: $boxShadow;
+    user-select: none;
+    cursor: pointer;
+
+    &:active {
+        box-shadow: $clickShadow;
+    }
+}
+
+.HeaderLeftSection {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    .PageTitle {
+        color: #777777;
+        font-size: $xl;
+        opacity: 0;
+
+        &.__show {
+            animation: show 0.2s forwards;
+        }
+
+        &.__hide {
+            animation: hide 0.2s forwards;
+        }
+    }
+}
+
+.BurgerContainer {
+    display: flex;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #333333;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    cursor: pointer;
+
+    &:hover {
+        .BurgerMenu {
+            color: $secondaryColor;
+        }
+    }
+
+    &:active {
+        .BurgerMenu {
+            transform: scale(0.95);
+        }
+    }
+
+    .BurgerMenu {
+        color: #ffffff;
+        font-size: $m;
+
+        &.__bigger {
+            font-size: $xl;
+        }
+    }
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes hide {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+}

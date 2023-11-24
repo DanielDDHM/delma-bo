@@ -1,0 +1,60 @@
+@import 'styles/variables';
+
+.tox-notification, .tox-statusbar__branding {
+	display: none !important;
+}
+
+.ace_editor {
+    width: 100% !important;
+    height: 600px !important;
+}
+
+.ace_editor, .ace_editor *{
+    font-family: "Monaco", "Menlo", "Ubuntu Mono", "Droid Sans Mono", "Consolas", monospace !important;
+}
+
+.email_preview_block {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+
+    .email_preview {
+        border: 1px solid gray;
+        padding: 1px;
+        overflow-y: auto;
+        width: 100%;
+        height: 100%;
+
+        &.preview_mobile {
+            width: 380px;
+        }
+    
+        iframe {
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
+
+.email_preview_options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .email_preview_devices {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+
+        em {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        &.active {
+            color: $lightPrimary;
+        }
+    }
+}

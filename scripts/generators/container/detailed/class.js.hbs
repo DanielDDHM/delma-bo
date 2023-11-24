@@ -1,0 +1,121 @@
+/*
+*
+* {{properCase name }}
+*
+*/
+
+import React from 'react';
+import { connect } from 'react-redux';
+import { setTitle, setLoader } from 'store/actions';
+{{#if wantHeaders}}
+import { Helmet } from 'react-helmet';
+{{/if}}
+import { Table } from 'components';
+{{#if hasSidebar}}
+import { Sidebar } from 'antd';
+{{else}}
+import { push } from 'connected-react-router';
+{{/if}}
+import { API, Endpoints } from 'utils/api';
+{{#if wantStrings}}
+import Strings from 'utils/strings';
+{{/if}}
+{{#if wantStyles}}
+import './styles.scss';
+{{/if}}
+
+export class {{ properCase name }} extends {{{ type }}}<any, any> {
+	constructor(props: any) {
+		super(props);
+
+		this.state = {
+            data: [],
+            {{#if hasSidebar}}
+            openSidebar: false,
+            {{/if}}
+        };
+	}
+
+	componentDidMount() {
+		const { dispatch } = this.props;
+
+        // Uncomment this
+        // this.getData();
+
+		// change this
+		dispatch(setTitle('{{ properCase name }}'));
+	}
+
+    async getData() {
+        const { dispatch } = this.props;
+
+        dispatch(setLoader(true));
+
+        const response = await API.get({
+            url: Endpoints.yourEndpoint(),
+        });
+
+        if (response.ok) {
+            this.setState({ data: response.data.results.collection });
+        }
+
+        dispatch(setLoader(false));
+    }
+
+    editEntry(obj) {
+    {{#if hasSidebar}}
+        const { dispatch } = this.props;
+        dispatch(push('/{{properCase name}}/obj.original._id'));
+    {{else}}
+        const editObject = JSON.parse(JSON.stringify(obj.original));
+        this.setState({ openSidebar: true, editObject });
+    {{/if}}
+    }
+
+	render() {
+        const { data } = this.state;
+
+		return (
+			<React.Fragment>
+				{{#if wantHeaders}}
+				<Helmet>
+					<title>{{properCase name}}</title>
+					<meta name="description" content="Description of {{properCase name}}" />
+				</Helmet>
+				{{/if}}
+				<Table
+					data={data}
+					columns={[
+						{
+							Header: Strings.{{properCase name}}.field1,
+							id: 'field 1',
+							accessor: (row: any) => row.field1,
+						},
+						{
+							Header: Strings.{{properCase name}}.field2,
+							id: 'field 2',
+							accessor: (row: any) => row.field2,
+						},
+						{
+							Header: Strings.{{properCase name}}.field3,
+							id: 'field 3',
+							accessor: (row: any) => row.field3,
+						},
+					]}
+					filterable
+					actions={{
+						onEdit: (obj: any) => this.editEntry(obj),
+						onDelete: (obj: any) => this.deleteEntry(obj),
+					}}
+				/>
+                {{#if hasSidebar}}
+                {this.renderSidebar()}
+                {{/if}}
+			</React.Fragment>
+		);
+	}
+}
+
+const mapStateToProps = (state: any) => ({});
+
+export default connect(mapStateToProps)({{ properCase name }});

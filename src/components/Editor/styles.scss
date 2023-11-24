@@ -1,0 +1,30 @@
+.EditorContainer {
+    &.__hasErrors {
+        .tox-tinymce {
+            border: 1px solid red;
+            box-shadow: 1px 1px 4px 1px #ff000040;
+            transition: 0.2s;
+        }
+    }
+}
+
+.ErrorContainer {
+    height: 24px;
+
+    .EditorError {
+        overflow: hidden;
+        height: 0;
+        color: red;
+        transition: 0.2s;
+
+        &.__open {
+            height: 24px;
+        }
+    }
+}
+
+.tox-tinymce--disabled {
+	.tox-edit-area__iframe {
+		background-color: #f5f5f5 !important;
+	}
+}

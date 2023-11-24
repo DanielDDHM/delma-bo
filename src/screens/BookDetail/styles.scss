@@ -1,0 +1,189 @@
+@import "styles/variables";
+
+.BookDetailScreen {
+    .BookDetail {
+        height: 100%;
+        position: relative;
+        cursor: pointer;
+        border: 2px dashed #a6a5a6;
+        border-radius: 4px;
+
+        &:hover {
+            border-color: #40a9ff;
+
+            .GenericImageUploadOverlay:not(.--visible) {
+                opacity: 1;
+                background-color: #00000080;
+                color: #ffffff;
+            }
+        }
+
+        .BookDetailImage {
+            height: 100%;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+
+        .GenericImageDelete {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: 3px;
+            top: 3px;
+            min-height: 25px;
+            min-width: 25px;
+            border-radius: 50%;
+            background-color: #ddd;
+            border: none;
+            box-shadow: 0 0 4px 2px #00000080;
+            cursor: pointer;
+            transition: 200ms ease-in-out;
+
+            em {
+                font-size: $m;
+            }
+
+            &:hover {
+                color: #40a9ff;
+            }
+        }
+
+        .GenericImageUpload {
+            min-height: 200px;
+        }
+    }
+
+    .NotificationWrapper {
+        .ant-collapse-header {
+            padding: 0 !important;
+        }
+
+        .ant-collapse-content-box {
+            padding: 12px 0 0 !important;
+        }
+
+        textarea {
+            resize: none;
+        }
+    }
+
+    .BookUsers {
+        margin-bottom: 20px;
+    }
+
+    .AudioElement {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+    }
+}
+
+input#drawer_input {
+    height: 40px;
+}
+
+.GenericHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+
+    &.--header-nospace {
+        margin-bottom: 0;
+    }
+
+    .GenericTitle {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: $primaryColor;
+
+        p {
+            margin: 0;
+            font-weight: 700;
+            font-size: $l;
+        }
+
+        em {
+            font-size: 20px;
+        }
+    }
+}
+
+.DrawerSearchResults {
+    .DrawerSearchEntry {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+
+        .DrawerUserInfo {
+            flex: 1;
+
+            p {
+                margin: 0;
+                font-weight: 500;
+            }
+        }
+
+        .DrawerSelectWrapper {
+            height: 20px;
+            min-height: 20px;
+            width: 20px;
+            min-width: 20px;
+            border: 1px solid #d1d1d1;
+            border-radius: 50%;
+            transition: 300ms ease-in-out;
+
+            &.--active {
+                background-color: $primaryColor;
+            }
+        }
+
+        &:hover {
+            .DrawerSelectWrapper:not(.--active) {
+                border-color: $primaryColor;
+            }
+        }
+    }
+}
+
+.NotificationSendEmail {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    p {
+        margin: 0;
+        font-weight: 600;
+    }
+}
+
+.SidebarLanguageWrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.MultiOptionLabel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    button {
+        background-color: #fff;
+        border: 1px solid #d9d9d9;
+        height: 25px;
+        width: 25px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: 200ms ease-in-out;
+
+        &:hover {
+            border: 1px solid $primaryColor;
+        }
+    }
+}

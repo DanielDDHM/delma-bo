@@ -1,0 +1,342 @@
+@import "styles/variables";
+
+.GalleryItemScreen {
+    .GalleryItem {
+        height: 100%;
+        position: relative;
+        cursor: pointer;
+        border: 2px dashed #a6a5a6;
+        border-radius: 4px;
+
+        &:hover {
+            border-color: #40a9ff;
+
+            .GenericImageUploadOverlay:not(.--visible) {
+                opacity: 1;
+                background-color: #00000080;
+                color: #ffffff;
+            }
+        }
+
+        .GalleryItemImage {
+            height: 100%;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+
+        .GenericImageDelete {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: 3px;
+            top: 3px;
+            min-height: 25px;
+            min-width: 25px;
+            border-radius: 50%;
+            background-color: #ddd;
+            border: none;
+            box-shadow: 0 0 4px 2px #00000080;
+            cursor: pointer;
+            transition: 200ms ease-in-out;
+
+            em {
+                font-size: $m;
+            }
+
+            &:hover {
+                color: #40a9ff;
+            }
+        }
+
+        .GenericImageUpload {
+            min-height: 200px;
+        }
+    }
+
+    .NotificationWrapper {
+        .ant-collapse-header {
+            padding: 0 !important;
+        }
+
+        .ant-collapse-content-box {
+            padding: 12px 0 0 !important;
+        }
+
+        textarea {
+            resize: none;
+        }
+    }
+
+    .GalleryUsers {
+        margin-bottom: 20px;
+    }
+
+    .AudioElement {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+    }
+}
+
+input#drawer_input {
+    height: 40px;
+}
+
+.GenericHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+
+    &.--header-nospace {
+        margin-bottom: 0;
+    }
+
+    .GenericTitle {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: $primaryColor;
+
+        p {
+            margin: 0;
+            font-weight: 700;
+            font-size: $l;
+        }
+
+        em {
+            font-size: 20px;
+        }
+    }
+}
+
+.YoutubeWrapper {
+    position: relative;
+    border: 2px dashed #a6a5a6;
+    border-radius: 4px;
+    overflow: hidden;
+
+    &.--no-border {
+        border: none;
+    }
+
+    .YoutubeOverlay {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 300px;
+        background-color: #eee;
+
+        em {
+            font-size: 36px;
+        }
+
+        span {
+            display: block;
+            margin-top: 20px;
+            max-width: 250px;
+            text-align: center;
+            font-weight: 600;
+        }
+    }
+}
+
+.DrawerSearchResults {
+    .DrawerSearchEntry {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+
+        .DrawerUserInfo {
+            flex: 1;
+
+            p {
+                margin: 0;
+                font-weight: 500;
+            }
+        }
+
+        .DrawerSelectWrapper {
+            height: 20px;
+            min-height: 20px;
+            width: 20px;
+            min-width: 20px;
+            border: 1px solid #d1d1d1;
+            border-radius: 50%;
+            transition: 300ms ease-in-out;
+
+            &.--active {
+                background-color: $primaryColor;
+            }
+        }
+
+        &:hover {
+            .DrawerSelectWrapper:not(.--active) {
+                border-color: $primaryColor;
+            }
+        }
+    }
+}
+
+.NotificationSendEmail {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    p {
+        margin: 0;
+        font-weight: 600;
+    }
+}
+
+.SidebarLanguageWrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.MultiOptionLabel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    button {
+        background-color: #fff;
+        border: 1px solid #d9d9d9;
+        height: 25px;
+        width: 25px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: 200ms ease-in-out;
+
+        &:hover {
+            border: 1px solid $primaryColor;
+        }
+    }
+}
+
+.SurveyAnswerBlock {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    input:not(.SurveyAnswerValue) {
+        flex: 1;
+    }
+
+    .SurveyAnswerValue {
+        width: 60px;
+        text-align: right;
+    }
+
+    button {
+        height: 37px;
+        width: 37px;
+        border-radius: 4px;
+        background-color: #fff;
+        border: 1px solid #d9d9d9;
+        cursor: pointer;
+        transition: 200ms ease-in-out;
+
+        &:hover:not(:disabled) {
+            border: 1px solid $primaryColor;
+        }
+
+        &:disabled {
+            background-color: #f5f5f5;
+            cursor: not-allowed;
+            color: #d9d9d9;
+        }
+    }
+}
+
+.DrawerAnswersList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.SurveyResultsWrapper {
+    margin-top: 20px;
+}
+
+.SurveyResultsList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .SurveyResult {
+        display: flex;
+        width: 100%;
+        gap: 10px;
+
+        .SurverResultInputBlock {
+            width: 150px;
+        }
+    }
+
+    textarea {
+        resize: none;
+    }
+}
+
+.SurverResultsAdd {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #d9d9d9;
+    background-color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 200ms ease-in-out;
+
+    &:hover {
+        border-color: $primaryColor;
+    }
+}
+
+.SurveyResultSeparator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0 0;
+
+    .SurveySeparator {
+        height: 1px;
+        background-color: #f1f1f1;
+        flex: 1;
+    }
+
+    button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25px;
+        height: 25px;
+        border: 1px solid #d9d9d9;
+        border-radius: 4px;
+        background-color: #fff;
+        cursor: pointer;
+        transition: 200ms ease-in-out;
+
+        em {
+            font-size: 12px;
+            transition: 200ms ease-in-out;
+        }
+
+        &:hover {
+            border-color: #f00;
+
+            em {
+                color: #f00;
+            }
+        }
+    }
+}

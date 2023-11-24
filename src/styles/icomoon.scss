@@ -1,0 +1,973 @@
+@import "variables";
+
+@font-face {
+    font-family: "#{$icomoon-font-family}";
+    src: url("#{$icomoon-font-path}/#{$icomoon-font-family}.eot?yakrt7");
+    src: url("#{$icomoon-font-path}/#{$icomoon-font-family}.eot?yakrt7#iefix")
+            format("embedded-opentype"),
+        url("#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?yakrt7")
+            format("truetype"),
+        url("#{$icomoon-font-path}/#{$icomoon-font-family}.woff?yakrt7")
+            format("woff"),
+        url("#{$icomoon-font-path}/#{$icomoon-font-family}.svg?yakrt7##{$icomoon-font-family}")
+            format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="moon-"],
+[class*=" moon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: "#{$icomoon-font-family}" !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.moon-bin {
+    &:before {
+        content: $moon-bin;
+    }
+}
+.moon-sync {
+    &:before {
+        content: $moon-sync;
+    }
+}
+.moon-blackboard {
+    &:before {
+        content: $moon-blackboard;
+    }
+}
+.moon-volume {
+    &:before {
+        content: $moon-volume;
+    }
+}
+.moon-video {
+    &:before {
+        content: $moon-video;
+    }
+}
+.moon-psychologist {
+    &:before {
+        content: $moon-psychologist;
+    }
+}
+.moon-medical-report {
+    &:before {
+        content: $moon-medical-report;
+    }
+}
+.moon-drag {
+    &:before {
+        content: $moon-drag;
+    }
+}
+.moon-calendar {
+    &:before {
+        content: $moon-calendar;
+    }
+}
+.moon-country {
+    &:before {
+        content: $moon-country;
+    }
+}
+.moon-correction {
+    &:before {
+        content: $moon-correction;
+    }
+}
+.moon-tick {
+    &:before {
+        content: $moon-tick;
+    }
+}
+.moon-downloading {
+    &:before {
+        content: $moon-downloading;
+    }
+}
+.moon-letter {
+    &:before {
+        content: $moon-letter;
+    }
+}
+.moon-house-outline {
+    &:before {
+        content: $moon-house-outline;
+    }
+}
+.moon-velocimetro {
+    &:before {
+        content: $moon-velocimetro;
+    }
+}
+.moon-stats {
+    &:before {
+        content: $moon-stats;
+    }
+}
+.moon-grid {
+    &:before {
+        content: $moon-grid;
+    }
+}
+.moon-list {
+    &:before {
+        content: $moon-list;
+    }
+}
+.moon-arquivo {
+    &:before {
+        content: $moon-arquivo;
+    }
+}
+.moon-file {
+    &:before {
+        content: $moon-file;
+    }
+}
+.moon-stats-1 {
+    &:before {
+        content: $moon-stats-1;
+    }
+}
+.moon-team {
+    &:before {
+        content: $moon-team;
+    }
+}
+.moon-email {
+    &:before {
+        content: $moon-email;
+    }
+}
+.moon-placeholder {
+    &:before {
+        content: $moon-placeholder;
+    }
+}
+.moon-traje {
+    &:before {
+        content: $moon-traje;
+    }
+}
+.moon-masculino {
+    &:before {
+        content: $moon-masculino;
+    }
+}
+.moon-predio-comercial {
+    &:before {
+        content: $moon-predio-comercial;
+    }
+}
+.moon-companhia {
+    &:before {
+        content: $moon-companhia;
+    }
+}
+.moon-tarefa {
+    &:before {
+        content: $moon-tarefa;
+    }
+}
+.moon-euro {
+    &:before {
+        content: $moon-euro;
+    }
+}
+.moon-chave-inglesa {
+    &:before {
+        content: $moon-chave-inglesa;
+    }
+}
+.moon-gerenciamento-de-dinheiro {
+    &:before {
+        content: $moon-gerenciamento-de-dinheiro;
+    }
+}
+.moon-definicoes {
+    &:before {
+        content: $moon-definicoes;
+    }
+}
+.moon-team-1 {
+    &:before {
+        content: $moon-team-1;
+    }
+}
+.moon-bell {
+    &:before {
+        content: $moon-bell;
+    }
+}
+.moon-olho {
+    &:before {
+        content: $moon-olho;
+    }
+}
+.moon-olho-fechado {
+    &:before {
+        content: $moon-olho-fechado;
+    }
+}
+.moon-lapis {
+    &:before {
+        content: $moon-lapis;
+    }
+}
+.moon-lixeira {
+    &:before {
+        content: $moon-lixeira;
+    }
+}
+.moon-adicionar-acrescentar {
+    &:before {
+        content: $moon-adicionar-acrescentar;
+    }
+}
+.moon-mais {
+    &:before {
+        content: $moon-mais;
+    }
+}
+.moon-baixa {
+    &:before {
+        content: $moon-baixa;
+    }
+}
+.moon-ordenar {
+    &:before {
+        content: $moon-ordenar;
+    }
+}
+.moon-ordenar-1 {
+    &:before {
+        content: $moon-ordenar-1;
+    }
+}
+.moon-ordenar-2 {
+    &:before {
+        content: $moon-ordenar-2;
+    }
+}
+.moon-right-chevron {
+    &:before {
+        content: $moon-right-chevron;
+    }
+}
+.moon-print {
+    &:before {
+        content: $moon-print;
+    }
+}
+.moon-repeat {
+    &:before {
+        content: $moon-repeat;
+    }
+}
+.moon-measure {
+    &:before {
+        content: $moon-measure;
+    }
+}
+.moon-stock-history {
+    &:before {
+        content: $moon-stock-history;
+    }
+}
+.moon-custom_icon {
+    &:before {
+        content: $moon-custom_icon;
+    }
+}
+.moon-blog {
+    &:before {
+        content: $moon-blog;
+    }
+}
+.moon-shuttle {
+    &:before {
+        content: $moon-shuttle;
+    }
+}
+.moon-yahoo {
+    &:before {
+        content: $moon-yahoo;
+    }
+}
+.moon-shapes {
+    &:before {
+        content: $moon-shapes;
+    }
+}
+.moon-shapes1 {
+    &:before {
+        content: $moon-shapes1;
+    }
+}
+.moon-grampo {
+    &:before {
+        content: $moon-grampo;
+    }
+}
+.moon-close {
+    &:before {
+        content: $moon-close;
+    }
+}
+.moon-heart-1 {
+    &:before {
+        content: $moon-heart-1;
+    }
+}
+.moon-user {
+    &:before {
+        content: $moon-user;
+    }
+}
+.moon-user1 {
+    &:before {
+        content: $moon-user1;
+    }
+}
+.moon-user2 {
+    &:before {
+        content: $moon-user2;
+    }
+}
+.moon-android {
+    &:before {
+        content: $moon-android;
+    }
+}
+.moon-apple {
+    &:before {
+        content: $moon-apple;
+    }
+}
+.moon-newsletter-1 {
+    &:before {
+        content: $moon-newsletter-1;
+    }
+}
+.moon-info-2 {
+    &:before {
+        content: $moon-info-2;
+    }
+}
+.moon-duplicate {
+    &:before {
+        content: $moon-duplicate;
+    }
+}
+.moon-generate-folder {
+    &:before {
+        content: $moon-generate-folder;
+    }
+}
+.moon-download-folder {
+    &:before {
+        content: $moon-download-folder;
+    }
+}
+.moon-shopping-cart1 {
+    &:before {
+        content: $moon-shopping-cart1;
+    }
+}
+.moon-sync-folder {
+    &:before {
+        content: $moon-sync-folder;
+    }
+}
+.moon-upload-file {
+    &:before {
+        content: $moon-upload-file;
+    }
+}
+.moon-upload-folder {
+    &:before {
+        content: $moon-upload-folder;
+    }
+}
+.moon-inbox {
+    &:before {
+        content: $moon-inbox;
+    }
+}
+.moon-save-3 {
+    &:before {
+        content: $moon-save-3;
+    }
+}
+.moon-diagram1 {
+    &:before {
+        content: $moon-diagram1;
+    }
+}
+.moon-notification {
+    &:before {
+        content: $moon-notification;
+    }
+}
+.moon-package {
+    &:before {
+        content: $moon-package;
+    }
+}
+.moon-team1 {
+    &:before {
+        content: $moon-team1;
+    }
+}
+.moon-paint-brush {
+    &:before {
+        content: $moon-paint-brush;
+    }
+}
+.moon-dots-vertical {
+    &:before {
+        content: $moon-dots-vertical;
+    }
+}
+.moon-calculator {
+    &:before {
+        content: $moon-calculator;
+    }
+}
+.moon-users {
+    &:before {
+        content: $moon-users;
+    }
+}
+.moon-analysis {
+    &:before {
+        content: $moon-analysis;
+    }
+}
+.moon-tax {
+    &:before {
+        content: $moon-tax;
+    }
+}
+.moon-shopping-bag2 {
+    &:before {
+        content: $moon-shopping-bag2;
+    }
+}
+.moon-eye-blocked {
+    &:before {
+        content: $moon-eye-blocked;
+    }
+}
+.moon-eye {
+    &:before {
+        content: $moon-eye;
+    }
+}
+.moon-external-link {
+    &:before {
+        content: $moon-external-link;
+    }
+}
+.moon-refund {
+    &:before {
+        content: $moon-refund;
+    }
+}
+.moon-delivery {
+    &:before {
+        content: $moon-delivery;
+    }
+}
+.moon-location {
+    &:before {
+        content: $moon-location;
+    }
+}
+.moon-text-files {
+    &:before {
+        content: $moon-text-files;
+    }
+}
+.moon-brand {
+    &:before {
+        content: $moon-brand;
+    }
+}
+.moon-order {
+    &:before {
+        content: $moon-order;
+    }
+}
+.moon-like {
+    &:before {
+        content: $moon-like;
+    }
+}
+.moon-order-1 {
+    &:before {
+        content: $moon-order-1;
+    }
+}
+.moon-shopping-bag3 {
+    &:before {
+        content: $moon-shopping-bag3;
+    }
+}
+.moon-logout {
+    &:before {
+        content: $moon-logout;
+    }
+}
+.moon-paint {
+    &:before {
+        content: $moon-paint;
+    }
+}
+.moon-customer {
+    &:before {
+        content: $moon-customer;
+    }
+}
+.moon-bell1 {
+    &:before {
+        content: $moon-bell1;
+    }
+}
+.moon-partner {
+    &:before {
+        content: $moon-partner;
+    }
+}
+.moon-global {
+    &:before {
+        content: $moon-global;
+    }
+}
+.moon-log {
+    &:before {
+        content: $moon-log;
+    }
+}
+.moon-product-v2 {
+    &:before {
+        content: $moon-product-v2;
+    }
+}
+.moon-tag {
+    &:before {
+        content: $moon-tag;
+    }
+}
+.moon-diagram {
+    &:before {
+        content: $moon-diagram;
+    }
+}
+.moon-speedometer1 {
+    &:before {
+        content: $moon-speedometer1;
+    }
+}
+.moon-discount {
+    &:before {
+        content: $moon-discount;
+    }
+}
+.moon-shopping-list {
+    &:before {
+        content: $moon-shopping-list;
+    }
+}
+.moon-preferences {
+    &:before {
+        content: $moon-preferences;
+    }
+}
+.moon-back1 {
+    &:before {
+        content: $moon-back1;
+    }
+}
+.moon-back {
+    &:before {
+        content: $moon-back;
+    }
+}
+.moon-search {
+    &:before {
+        content: $moon-search;
+    }
+}
+.moon-pencil-outline {
+    &:before {
+        content: $moon-pencil-outline;
+    }
+}
+.moon-working-briefcase {
+    &:before {
+        content: $moon-working-briefcase;
+    }
+}
+.moon-frame {
+    &:before {
+        content: $moon-frame;
+    }
+}
+.moon-shopping-cart {
+    &:before {
+        content: $moon-shopping-cart;
+    }
+}
+.moon-trash {
+    &:before {
+        content: $moon-trash;
+    }
+}
+.moon-house-outline1 {
+    &:before {
+        content: $moon-house-outline1;
+    }
+}
+.moon-refresh {
+    &:before {
+        content: $moon-refresh;
+    }
+}
+.moon-arrow-up {
+    &:before {
+        content: $moon-arrow-up;
+    }
+}
+.moon-plus {
+    &:before {
+        content: $moon-plus;
+    }
+}
+.moon-close1 {
+    &:before {
+        content: $moon-close1;
+    }
+}
+.moon-correct-symbol {
+    &:before {
+        content: $moon-correct-symbol;
+    }
+}
+.moon-lock {
+    &:before {
+        content: $moon-lock;
+    }
+}
+.moon-unlock {
+    &:before {
+        content: $moon-unlock;
+    }
+}
+.moon-golf {
+    &:before {
+        content: $moon-golf;
+    }
+}
+.moon-Menu {
+    &:before {
+        content: $moon-Menu;
+    }
+}
+.moon-user-outline {
+    &:before {
+        content: $moon-user-outline;
+    }
+}
+.moon-paper-plane {
+    &:before {
+        content: $moon-paper-plane;
+    }
+}
+.moon-facebook1 {
+    &:before {
+        content: $moon-facebook1;
+    }
+}
+.moon-instagram {
+    &:before {
+        content: $moon-instagram;
+    }
+}
+.moon-pinterest {
+    &:before {
+        content: $moon-pinterest;
+    }
+}
+.moon-twitter {
+    &:before {
+        content: $moon-twitter;
+    }
+}
+.moon-timetable-outline {
+    &:before {
+        content: $moon-timetable-outline;
+    }
+}
+.moon-spanner {
+    &:before {
+        content: $moon-spanner;
+    }
+}
+.moon-eye-outline {
+    &:before {
+        content: $moon-eye-outline;
+    }
+}
+.moon-speedometer {
+    &:before {
+        content: $moon-speedometer;
+    }
+}
+.moon-block {
+    &:before {
+        content: $moon-block;
+    }
+}
+.moon-filter {
+    &:before {
+        content: $moon-filter;
+    }
+}
+.moon-bank-transfer-logo {
+    &:before {
+        content: $moon-bank-transfer-logo;
+    }
+}
+.moon-credit-card {
+    &:before {
+        content: $moon-credit-card;
+    }
+}
+.moon-credit-cards-payment {
+    &:before {
+        content: $moon-credit-cards-payment;
+    }
+}
+.moon-tshirt {
+    &:before {
+        content: $moon-tshirt;
+    }
+}
+.moon-pay {
+    &:before {
+        content: $moon-pay;
+    }
+}
+.moon-product {
+    &:before {
+        content: $moon-product;
+    }
+}
+.moon-commerce-and-shopping1 {
+    &:before {
+        content: $moon-commerce-and-shopping1;
+    }
+}
+.moon-delivery-truck {
+    &:before {
+        content: $moon-delivery-truck;
+    }
+}
+.moon-upgrade {
+    &:before {
+        content: $moon-upgrade;
+    }
+}
+.moon-shipped {
+    &:before {
+        content: $moon-shipped;
+    }
+}
+.moon-box {
+    &:before {
+        content: $moon-box;
+    }
+}
+.moon-phone-call {
+    &:before {
+        content: $moon-phone-call;
+    }
+}
+.moon-wallet {
+    &:before {
+        content: $moon-wallet;
+    }
+}
+.moon-package1 {
+    &:before {
+        content: $moon-package1;
+    }
+}
+.moon-invoice-1 {
+    &:before {
+        content: $moon-invoice-1;
+    }
+}
+.moon-address {
+    &:before {
+        content: $moon-address;
+    }
+}
+.moon-free-delivery {
+    &:before {
+        content: $moon-free-delivery;
+    }
+}
+.moon-fast-delivery {
+    &:before {
+        content: $moon-fast-delivery;
+    }
+}
+.moon-shop {
+    &:before {
+        content: $moon-shop;
+    }
+}
+.moon-list1 {
+    &:before {
+        content: $moon-list1;
+    }
+}
+.moon-exchange {
+    &:before {
+        content: $moon-exchange;
+    }
+}
+.moon-distribution {
+    &:before {
+        content: $moon-distribution;
+    }
+}
+.moon-eraser {
+    &:before {
+        content: $moon-eraser;
+    }
+}
+.moon-loudspeaker {
+    &:before {
+        content: $moon-loudspeaker;
+    }
+}
+.moon-mobile-app {
+    &:before {
+        content: $moon-mobile-app;
+    }
+}
+.moon-connection1 {
+    &:before {
+        content: $moon-connection1;
+    }
+}
+.moon-responsive {
+    &:before {
+        content: $moon-responsive;
+    }
+}
+.moon-clock1 {
+    &:before {
+        content: $moon-clock1;
+    }
+}
+.moon-paypal {
+    &:before {
+        content: $moon-paypal;
+    }
+}
+.moon-mail {
+    &:before {
+        content: $moon-mail;
+    }
+}
+.moon-testimonial {
+    &:before {
+        content: $moon-testimonial;
+    }
+}
+.moon-tax-1 {
+    &:before {
+        content: $moon-tax-1;
+    }
+}
+.moon-shipping-cost {
+    &:before {
+        content: $moon-shipping-cost;
+    }
+}
+.moon-clear-filters {
+    &:before {
+        content: $moon-clear-filters;
+    }
+}
+.moon-www {
+    &:before {
+        content: $moon-www;
+    }
+}
+.moon-tax-settings {
+    &:before {
+        content: $moon-tax-settings;
+    }
+}
+.moon-scale {
+    &:before {
+        content: $moon-scale;
+    }
+}
+.moon-customer-1 {
+    &:before {
+        content: $moon-customer-1;
+    }
+}
+.moon-support-tickets {
+    &:before {
+        content: $moon-support-tickets;
+    }
+}
+.moon-ticket-boxes-thinner-01 {
+    &:before {
+        content: $moon-ticket-boxes-thinner-01;
+    }
+}
+.moon-shopping-bag-thicker {
+    &:before {
+        content: $moon-shopping-bag-thicker;
+    }
+}
+.moon-star-empty {
+    &:before {
+        content: $moon-star-empty;
+    }
+}
+.moon-star-half {
+    &:before {
+        content: $moon-star-half;
+    }
+}
+.moon-star-full {
+    &:before {
+        content: $moon-star-full;
+    }
+}
+.moon-gradient-2 {
+    &:before {
+        content: $moon-gradient-2;
+    }
+}

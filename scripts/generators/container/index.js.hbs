@@ -1,0 +1,51 @@
+/*
+*
+* {{properCase name }}
+*
+*/
+
+import React from 'react';
+import { connect } from 'react-redux';
+import { setTitle } from 'store/actions';
+{{#if wantHeaders}}
+import { Helmet } from 'react-helmet';
+{{/if}}
+{{#if wantStrings}}
+import Strings from 'utils/strings';
+{{/if}}
+{{#if wantStyles}}
+import './styles.scss';
+{{/if}}
+
+export class {{ properCase name }} extends React.{{{ component }}} {
+	constructor(props: any) {
+		super(props);
+
+		this.state = {};
+	}
+
+	componentDidMount() {
+		const { dispatch } = this.props;
+
+		// change this
+		dispatch(setTitle('{{ properCase name }}'));
+	}
+
+	render() {
+		return (
+			<React.Fragment>
+				{{#if wantHeaders}}
+				<Helmet>
+					<title>{{properCase name}}</title>
+					<meta name="description" content="Description of {{properCase name}}" />
+				</Helmet>
+				{{/if}}
+				<div>{{ properCase name }}</div>
+			</React.Fragment>
+		);
+	}
+}
+
+const mapStateToProps = (state: any) => ({});
+
+export default connect(mapStateToProps)({{ properCase name }});
